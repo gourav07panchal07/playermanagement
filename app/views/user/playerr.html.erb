@@ -1,0 +1,18 @@
+<br>
+<div style="position: absolute; left: 95%; ">
+  <%= link_to 'Log out', destroy_playerr_session_path, method: :delete, class: "text-dark" %>
+</div><br>
+
+<div style=" margin-left: 25px;">
+  <%= link_to 'profile', user_playerr_profile_path , class: "text-dark"%>
+</div><br>
+
+<center>
+  <h3>Team Name</h3>
+</center><hr>
+
+<% @show_team.each do |show| %>
+  <center>
+    <%= show.email %>
+  </center><br><hr>
+<% end %>

@@ -1,0 +1,37 @@
+<br>
+<a href="/user/see_player" style="position: absolute; left:45%;" class= "text-dark"> 
+  see player list
+</a> 
+
+<div style="position: absolute; left: 95%; ">
+  <%= link_to 'Log out', destroy_team_session_path, class: "text-dark", method: :delete %>
+</div>
+
+<div style="position: absolute; left:51%; "> 
+  <%= link_to 'Profile', user_team_profile_path, class: "text-dark" %>
+</div><br><br>
+
+<div style="position: absolute; left:40%;">
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div><br><br>
+
+<center>
+  <h3>Player List</h3><hr>
+  <% @user.each do |player| %>
+    <div>
+      <%= player.name %>
+    </div><br>
+    <label>Price:</label>
+    <%= player.player_price %>
+    <%= form_with scope: :user, url: "/user", local: true do |form| %>
+      <%= form.hidden_field :playerr_id, required: true, value:player.id  %>
+      <%= form.hidden_field :team_id, required: true, value:current_user.id %>
+      <%= form.submit value:"BUY", class: 'btn btn-success' %>
+    <% end %><hr>
+  <% end %>
+</center>
+

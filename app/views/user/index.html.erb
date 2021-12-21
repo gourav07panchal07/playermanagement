@@ -1,0 +1,10 @@
+<% if team_signed_in? %>
+ <script type="text/javascript">
+    window.location.href="/user/team"  
+ </script>
+<% elsif playerr_signed_in? %>
+ <script type="text/javascript">
+    window.location.href="/user/playerr"  
+ </script>
+ 
+<% end %>

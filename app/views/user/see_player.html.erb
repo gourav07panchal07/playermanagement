@@ -1,0 +1,14 @@
+<br><br>
+<div style="margin-left: 12px;">
+  <%= link_to 'back', user_team_path, class: "text-dark" %>
+</div>
+
+<center>
+  <h1>Player List</h1>
+</center><hr>
+
+<% @list_show.each do |list| %>
+  <center> 
+    <%= list.name %>
+  </center><br><hr>
+<% end %> 

@@ -1,0 +1,15 @@
+<br>
+<center>
+  <div class="card col-lg-4" style="position: absolute; top: 10%; left: 30%;">
+    <div class="card-body">
+      <% @profile.each do |profile |%>
+        <%=image_tag profile.image %><br><br><hr>
+        <%= profile.name%><br><br><hr>
+        <%= profile.email%><br><br><hr>
+        <%= profile.mobile%><br><hr>
+      <%end%> 
+      <%= link_to 'Edit ', edit_user_registration_path %><br><hr>
+      <%= link_to 'Back ', user_playerr_path %><br>
+    </div>  
+  </div>
+</center> 
